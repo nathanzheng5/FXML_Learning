@@ -1,14 +1,22 @@
 package sample;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-public class Controller {
+import java.net.URL;
+import java.util.ResourceBundle;
 
-    public Button button;
+public class Controller implements Initializable {
 
-    public void handleButtonClick() {
-        System.out.println("button is clicked");
-        button.setText("I'm clicked");
+    public void loginButtonClicked() {
+        System.out.println("User logged in");
+    }
+
+
+    // this is called as soon as the view loads
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("Loading user data");
     }
 }
