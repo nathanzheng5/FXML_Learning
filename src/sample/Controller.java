@@ -6,6 +6,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -15,6 +17,7 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     public Button showDialogButton;
+    public ToggleGroup toggleGroup;
 
     public void loginButtonClicked() {
         System.out.println("User logged in");
@@ -44,5 +47,11 @@ public class Controller implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void toggleButtonClicked(ActionEvent actionEvent) {
+        final Toggle selectedToggle = toggleGroup.getSelectedToggle();
+        System.out.println("Selected toggle " + selectedToggle);
+        System.out.println("Selected ? " + (selectedToggle == null ? "No" : "Yes"));
     }
 }
